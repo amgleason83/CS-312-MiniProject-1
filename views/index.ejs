@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Blog</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main>
+    <h1>My Blog</h1>
+
+    <form action="/posts" method="POST">
+      <label for="author">Your name</label>
+      <input type="text" id="author" name="author" required>
+
+      <label for="title">Post title</label>
+      <input type="text" id="title" name="title" required>
+
+      <label for="content">Your post</label>
+      <textarea id="content" name="content" rows="6" required></textarea>
+
+      <button type="submit">Publish post</button>
+    </form>
+    <section>
+        <h2>Posts</h2>
+
+        <% if (posts.length === 0) { %>
+            <p>No posts yet. Write the first one!</p>
+        <% } %>
+
+        <% posts.forEach((post) => { %>
+            <article>
+            <h3><%= post.title %></h3>
+            <p>
+                By <%= post.author %>
+                · <%= post.createdAt.toLocaleString() %>
+            </p>
+            <p style="white-space: pre-wrap;"><%= post.content %></p>
+            <a href="/posts/<%= post.id %>/edit">Edit</a>
+            <form action="/posts/<%= post.id %>/delete" method="POST">
+                <button type="submit">Delete</button>
+            </form>
+            </article>
+        <% }); %>
+    </section>
+  </main>
+</body>
+</html>

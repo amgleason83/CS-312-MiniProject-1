@@ -1,0 +1,116 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #15171c;
+  color: #eeeeee;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+main {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 32px 20px;
+}
+
+h1,
+h2 {
+  color: #ffa657;
+}
+
+main > form,
+article {
+  background: #22252d;
+  padding: 24px;
+  border: 1px solid #454a57;
+  border-radius: 12px;
+  margin-bottom: 24px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+input,
+textarea {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 18px;
+  border: 1px solid #747b8c;
+  border-radius: 6px;
+  background: #15171c;
+  color: #eeeeee;
+  font: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  background: #ffa657;
+  color: #15171c;
+  font: inherit;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #ffbc80;
+}
+
+a {
+  color: #ffa657;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: #ffbc80;
+}
+
+:focus-visible {
+  outline: 3px solid #ffa657;
+  outline-offset: 3px;
+}
+
+article {
+  overflow-wrap: anywhere;
+}
+
+article h3 {
+  margin-top: 0;
+}
+
+article form {
+  display: inline-block;
+  margin-left: 12px;
+}
+
+article button {
+  background: #ffb4ab;
+}
+
+article button:hover {
+  background: #ffd0ca;
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 20px 12px;
+  }
+
+  main > form,
+  article {
+    padding: 16px;
+  }
+}
